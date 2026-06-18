@@ -1,0 +1,83 @@
+Metadata Information
+
+Metadata Date: 2024-09-25
+Metadata Language: en
+Metadata Point of Contact:
+Organization: Landscape Research Institute (Výzkumný ústav pro krajinu , v. v. i.), Květnové nám. 391, 25243 Průhonice, Czech Republic
+Email: vymazalova@vukoz.cz, kachalova@vukoz.cz
+Role: Point of Contact
+Metadata Standard: INSPIRE Profile of ISO 19115/19119
+
+Identification Information
+
+Resource Title: Potential Frequency of Endangered Plant Species in the Czech Republic
+Resource Abstract: The dataset represents the potential frequency of endangered plant species in habitats (according to their dispersal potential) in the Czech Republic. The dataset consists of two layers: 
+1) SPEC_DISTR_COUNT_ALL_Part1.shp, SPEC_DISTR_COUNT_ALL_Part2.shp, SPEC_DISTR_COUNT_ALL_Part3.shp, SPEC_DISTR_COUNT_ALL_Part4.shp: the potential frequency of endangered plant species map (all protection categories) 
+2) SPEC_DISTR_COUNT_C123_Part1.shp, SPEC_DISTR_COUNT_C123_Part2.shp: the potential frequency of endangered plant species map (protection categories C1 + C2 + C3).
+Resource Type: GeoDataset
+Resource Locator (URL): [Add URL]
+Unique Resource Identifier: [Add Identifier]
+Resource Language: en
+Keywords: Endangered plant species, Red List, Species distribution
+Topic Category: Environment
+
+Geographic Information
+
+Geographic Bounding Box: Czech Republic
+West: -904,582.214200 m
+East: -431,727.342500 m
+North: -935,374.130300 m
+South: -1,227,295.829500 m
+Coordinate Reference System: EPSG:5514 (S-JTSK Krovak EastNorth)
+
+Temporal Information
+
+Temporal Extent:
+Start Date: 2023-01-01
+End Date: 2024-12-31
+Date of Publication: 2024-09-25
+Date of Last Revision: 2024-09-25
+Date of Creation: 2024-09-25
+Quality and Lineage
+
+Lineage: 
+
+Species occurrences from the year 2000 were taken from combining two databases: PLADIAS (coordinates + GPS precision) and NDOP (points, lines, and polygons). All species occurrence data were transformed into polygons. Points and lines were given as polygons with a 1 m buffer, and large polygons with fair GPS precision (>400 m) were narrowed to a 400 m buffer around the centroid. Huge square polygons (3 x 3 km and larger) from the NDOP database, which probably represent occurrences inside the grid, were ignored due to low data precision. Occurrence intersections (duplicates) of the same species between the two databases were deleted, preferring more spatially precise data. In the end, a polygon layer of species occurrence was created.
+To create a basic habitat layer, the layers of the Czech Republic habitat map 2024 (Aktualizace základního mapování biotopů, https://data.nature.cz/ds/21) and Consolidated layer of ecosystems 2023 (Konsolidovaná vrstva ekosystémů 2023 (KVES), https://data.nature.cz/ds/108) were intersected to unify the legend.
+To create a map of habitats where endangered species occur, the basic habitat layer was intersected with species occurrence polygons. Habitat polygons intersected with precise (≤ 20 m) occurrence data were preserved in full. However, from intersections with less precise data, only "appropriate" habitat types for each individual species were preserved. The "appropriateness" of habitat type to species was evaluated according to Sádlo et al. (2007). Large habitat polygons representing forests, anthropogenic habitats (excluding arable fields), and large (>500 ha) reservoirs were narrowed to a 400 m buffer around the intersecting species occurrence polygon.
+To create a layer of potential dispersal of endangered plant species, dispersal distance was defined for each species according to Lososová et al. (2023). Species in dispersal distance classes 1, 2, and 3, considered non-dispersing, were kept within the same polygons as their current occurrence. For species from class 4  (up to 150 m average dispersal), and class and 5 and 6 (up to 500 m average dispersal), potential "appropriate" habitats were chosen within 150 and 500 m of the basic occurrence polygon edge. As in the previous case, all polygons were preserved in full except forests, anthropogenic habitats (excluding arable fields), and large reservoirs (>500 ha), which were cut by a 500 m buffer around the basic occurrence polygon edge.
+The final maps of the potential frequency of endangered plant species were created by counting individual species for each polygon geometry (current and potential occurrence). The polygons were then dissolved by the number of species to reduce the total number of polygons in the layer. NB! Dissolving means that polygons with a count of species "2" represent areas where two endangered species occur, but different taxa may inhabit different parts of the polygon.
+Potential frequency maps were created in two versions: all protection categories and protection categories C1 + C2 + C3. The column "COUNT" in the attributive table represents the total count of taxons in the polygon. The count of individual species inside each polygon, as well as the shape of the polygon after dissolving, may differ between these two versions. 
+
+Positional Accuracy: The positional accuracy is not defined (vector type). The minimal mapping unit is 5 sq. m.
+
+Logical Consistency: Topological consistency checks were performed to ensure no overlaps between polygons representing different counts of endangered species.
+
+Completeness: The dataset covers all habitats in the Czech Republic where endangered plant species are found or may potentially occur. Polygons with an area <5 sq. m. were deleted.
+
+Constraints
+
+Access Constraints: Limited access
+Use Constraints: Licensed under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+Conditions for Access and Use: Data can be obtained upon request and used for analysis and reporting, provided attribution is given to the Silva Tarouca Research Institute for Landscape and Ornamental Gardening (RILOG).
+Limitation on Public Access: Attribution, non-commercial
+
+Responsible Party
+
+Dataset Owner:
+Organization: Silva Tarouca Research Institute for Landscape and Ornamental Gardening (RILOG) (Výzkumný ústav Silva Taroucy pro krajinu a okrasné zahradnictví, VUKOZ)
+Email: vymazalova@vukoz.cz, kachalova@vukoz.cz
+Role: Custodian
+Distribution Information
+
+Distribution Format: Shapefile (partitions)
+
+Spatial Representation
+
+Spatial Resolution: Vector format
+Vector Type: Polygon
+
+Legal Information
+
+Access Rights: Limited
+License: Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
